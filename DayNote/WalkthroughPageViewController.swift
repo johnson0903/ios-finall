@@ -10,11 +10,11 @@ import UIKit
 
 class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerDataSource {
 
-    var pageHeadings = ["寫下你今天的心情", "照片牆紀錄回憶", "Discover"]
-    var pageImages = ["foodpin-intro-1", "foodpin-intro-2", "foodpin-intro-3"]
-    var pageContent = ["開始用心紀錄重要日子，美好青春不留白",
-                       "Search and locate your favourite restaurant on Maps",
-                       "Find restaurants pinned by your friends and other foodies around the world"]
+    var pageHeadings = ["寫下你今天的心情", "時間軸呈現回憶", "查看詳細內容及位置"]
+    var pageImages = ["intro-1", "intro-2", "intro-3"]
+    var pageContent = ["開始用心紀錄重要日子，青春不留白",
+                       "點點滴滴成屬於你的記事本",
+                       "時時刻刻輕鬆回憶起那些精彩的日子"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -50,7 +50,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.placeholder = "搜尋日記..."
         searchController.searchBar.tintColor = UIColor.white
         searchController.searchBar.barTintColor = UIColor(red: 236.0/255.0, green: 236.0/255.0, blue: 236.0/255.0, alpha: 1.0)
         
