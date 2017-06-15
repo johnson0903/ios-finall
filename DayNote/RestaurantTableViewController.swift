@@ -107,7 +107,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         let restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
         
         // Configure the cell...
-        cell.titleLabel.text = restaurant.title
+        cell.nameLabel.text = restaurant.name
         if let restaurantImage = restaurant.image {
             cell.thumbnailImageView.image = UIImage(data: restaurantImage as Data)
         }
@@ -134,7 +134,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         // Social Sharing Button
         let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share", handler: { (action, indexPath) -> Void in
             
-            let defaultText = "Just checking in at " + self.restaurants[indexPath.row].title!
+            let defaultText = "Just checking in at " + self.restaurants[indexPath.row].name!
             
             if let restaurantImage = self.restaurants[indexPath.row].image,
                 let imageToShare = UIImage(data: restaurantImage as Data) {
@@ -225,7 +225,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     func filterContent(for searchText: String) {
         searchResults = restaurants.filter({ (restaurant) -> Bool in
-            if let name = restaurant.title, let location = restaurant.location {
+            if let name = restaurant.name, let location = restaurant.location {
                 let isMatch = name.localizedCaseInsensitiveContains(searchText) || location.localizedCaseInsensitiveContains(searchText)
                 return isMatch
             }

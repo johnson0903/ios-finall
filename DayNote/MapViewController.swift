@@ -32,7 +32,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 
                 // Add annotation
                 let annotation = MKPointAnnotation()
-                annotation.title = self.restaurant.title
+                annotation.title = self.restaurant.name
                 
                 //這邊應該要改成日期
                 //annotation.subtitle = self.restaurant.type

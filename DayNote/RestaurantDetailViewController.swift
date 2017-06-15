@@ -27,7 +27,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
         tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
         
-        title = restaurant.title
+        title = restaurant.name
         
         navigationController?.hidesBarsOnSwipe = false
         
@@ -97,7 +97,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         switch indexPath.row {
         case 0:
             cell.fieldLabel.text = "標題"
-            cell.valueLabel.text = restaurant.title
+            cell.valueLabel.text = restaurant.name
         case 1:
             cell.fieldLabel.text = "位置"
             cell.valueLabel.text = restaurant.location
