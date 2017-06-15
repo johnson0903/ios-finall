@@ -43,11 +43,11 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rju-lh-dwC">
-                                            <rect key="frame" x="18" y="11" width="30" height="58"/>
+                                            <rect key="frame" x="18" y="12.5" width="30" height="55.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSm-Hk-yOD">
-                                                    <rect key="frame" x="3" y="0.0" width="24" height="26.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <rect key="frame" x="2.5" y="0.0" width="25.5" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                     <color key="textColor" red="0.37234896420000002" green="0.61063843969999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -60,15 +60,30 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gb2-2s-ew8">
-                                                    <rect key="frame" x="3" y="31.5" width="24.5" height="26.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <rect key="frame" x="3" y="31.5" width="24.5" height="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" red="0.37234896420000002" green="0.61063843969999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" text="01:31" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qo-0I-okm">
+                                            <rect key="frame" x="88" y="55" width="41" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Marker Filled-50" translatesAutoresizingMaskIntoConstraints="NO" id="gaf-sS-Wbv">
+                                            <rect key="frame" x="140" y="58" width="12" height="12"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Watch-50" translatesAutoresizingMaskIntoConstraints="NO" id="eK0-IE-OnC">
+                                            <rect key="frame" x="71" y="58" width="12" height="12"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFY-ZU-hDp">
-                                            <rect key="frame" x="71" y="38" width="213" height="33"/>
+                                            <rect key="frame" x="154" y="54" width="104" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,9 +98,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dayLabel" destination="eSm-Hk-yOD" id="AQ0-2i-Jhb"/>
                                     <outlet property="locationLabel" destination="MFY-ZU-hDp" id="psV-C7-0zR"/>
                                     <outlet property="nameLabel" destination="zGM-Hf-VCp" id="0Zo-G3-9rz"/>
                                     <outlet property="thumbnailImageView" destination="Ldx-U7-A62" id="Tpq-wq-aH3"/>
+                                    <outlet property="timeStampLabel" destination="7Qo-0I-okm" id="P3B-rB-oUP"/>
+                                    <outlet property="weekdayLabel" destination="Gb2-2s-ew8" id="vVJ-Y3-4hL"/>
                                     <segue destination="NyW-WO-8z7" kind="show" identifier="showRestaurantDetail" id="8Fe-Rf-haF"/>
                                 </connections>
                             </tableViewCell>
@@ -662,6 +680,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Marker Filled-50" width="50" height="50"/>
+        <image name="Watch-50" width="50" height="50"/>
         <image name="about" width="23" height="22"/>
         <image name="barrafina" width="480" height="480"/>
         <image name="check" width="28" height="28"/>

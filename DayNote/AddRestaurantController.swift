@@ -120,8 +120,36 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
                     restaurant.image = NSData(data: imageData)
                 }
             }
-            restaurant.date = NSDate()
-        
+            let currentDate = Date()
+            let calender = Calendar.current
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            let currentTimestamp = dateFormatter.string(from: currentDate as Date)
+            restaurant.timestamp = currentTimestamp
+            let day = calender.component(.day, from: currentDate)
+            restaurant.day = String(day)
+            let weekdayInt = calender.component(.weekday, from: currentDate)
+            var weekday: String
+            switch weekdayInt {
+            case 1:
+                weekday = "Sun"
+            case 2:
+                weekday = "Mon"
+            case 3:
+                weekday = "Tue"
+            case 4:
+                weekday = "Wen"
+            case 5:
+                weekday = "Thu"
+            case 6:
+                weekday = "Fri"
+            case 7:
+                weekday = "Sat"
+            default:
+                weekday = ""
+            }
+            restaurant.weekday = weekday
+            print(weekday)
             appDelegate.saveContext()
             
         }

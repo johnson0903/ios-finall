@@ -27,7 +27,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
         // Fetch data from data store
         let fetchRequest: NSFetchRequest<RestaurantMO> = RestaurantMO.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "day", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
@@ -112,9 +112,9 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             cell.thumbnailImageView.image = UIImage(data: restaurantImage as Data)
         }
         cell.locationLabel.text = restaurant.location
-
-        cell.accessoryType = restaurant.isVisited ? .checkmark : .none
-        
+        cell.dayLabel.text = restaurant.day
+        cell.weekdayLabel.text = restaurant.weekday
+        cell.timeStampLabel.text = restaurant.timestamp
         return cell
     }
     
