@@ -13,6 +13,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
 
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var nameTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet var locationTextField: UITextField!
     @IBOutlet weak var noteBodyTextField: UITextView!
     
@@ -115,7 +116,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             restaurant = RestaurantMO(context: appDelegate.persistentContainer.viewContext)
             restaurant.title = nameTextField.text
-            restaurant.name = nameTextField.text
+            restaurant.title = nameTextField.text
             restaurant.location = locationTextField.text
             restaurant.noteContent = noteBodyTextField.text
             // Core Data Exercise - Solution

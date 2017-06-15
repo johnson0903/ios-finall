@@ -84,8 +84,8 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="locationLabel" destination="MFY-ZU-hDp" id="psV-C7-0zR"/>
-                                    <outlet property="nameLabel" destination="zGM-Hf-VCp" id="0Zo-G3-9rz"/>
                                     <outlet property="thumbnailImageView" destination="Ldx-U7-A62" id="Tpq-wq-aH3"/>
+                                    <outlet property="titleLabel" destination="zGM-Hf-VCp" id="2FM-ht-iES"/>
                                     <segue destination="NyW-WO-8z7" kind="show" identifier="showRestaurantDetail" id="8Fe-Rf-haF"/>
                                 </connections>
                             </tableViewCell>
@@ -143,18 +143,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="日記標題" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DgX-l9-5vc">
-                                                    <rect key="frame" x="18" y="33.5" width="339" height="31"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k23-EJ-leb">
                                                     <rect key="frame" x="18" y="11" width="35" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="日記標題" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DgX-l9-5vc">
+                                                    <rect key="frame" x="18" y="33.5" width="339" height="31"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="DgX-l9-5vc" secondAttribute="bottom" constant="-1" id="81g-d5-H7E"/>
@@ -173,18 +173,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="現在位置" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-D0-0Pw">
-                                                    <rect key="frame" x="18" y="33.5" width="339" height="31"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgK-EL-iP5">
                                                     <rect key="frame" x="18" y="11" width="70" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="現在位置" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-D0-0Pw">
+                                                    <rect key="frame" x="18" y="34" width="339" height="30"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BgK-EL-iP5" firstAttribute="top" secondItem="IKF-Ci-wG7" secondAttribute="topMargin" constant="3" id="91U-kG-iLS"/>
@@ -252,9 +252,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="locationTextField" destination="UcD-D0-0Pw" id="Iyd-1D-yqq"/>
-                        <outlet property="nameTextField" destination="DgX-l9-5vc" id="SxY-Vt-0b3"/>
                         <outlet property="noteBodyTextField" destination="uby-tk-kB8" id="RQ6-2r-qDj"/>
                         <outlet property="photoImageView" destination="UU3-iZ-w44" id="sc7-94-XSK"/>
+                        <outlet property="titleTextField" destination="DgX-l9-5vc" id="2HW-9J-pIm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQL-BB-N4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
