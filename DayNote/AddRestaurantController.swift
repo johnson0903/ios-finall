@@ -60,12 +60,13 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //點選到imageveiw的那個欄位
         if indexPath.row == 0 {
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 let imagePicker = UIImagePickerController()
                 imagePicker.allowsEditing = true
                 imagePicker.sourceType = .photoLibrary
-                
                 imagePicker.delegate = self
                 
                 present(imagePicker, animated: true, completion: nil)
@@ -100,7 +101,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     
     @IBAction func save(sender: AnyObject) {
         if nameTextField.text == "" || locationTextField.text == "" {
-            let alertController = UIAlertController(title: "Oops!", message: "無法進行，你的某些欄位是空白的", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Oops!", message: "無法儲存，請填寫標題和位置", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(alertAction)
             present(alertController, animated: true, completion: nil)
@@ -108,24 +109,19 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
             return
         }
         
-        print("Name: \(nameTextField.text ?? "")")
-        print("Location: \(locationTextField.text ?? "")")
-        //print("Have you been here: \(isVisited)")
-        
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             restaurant = RestaurantMO(context: appDelegate.persistentContainer.viewContext)
-            restaurant.title = nameTextField.text
+            restaurant.name = nameTextField.text
             restaurant.name = nameTextField.text
             restaurant.location = locationTextField.text
             restaurant.noteContent = noteBodyTextField.text
-            // Core Data Exercise - Solution
             if let restaurantImage = photoImageView.image {
                 if let imageData = UIImagePNGRepresentation(restaurantImage) {
                     restaurant.image = NSData(data: imageData)
                 }
             }
-            
-            print("Saving data to context ...")
+            restaurant.date = NSDate()
+        
             appDelegate.saveContext()
             
         }
