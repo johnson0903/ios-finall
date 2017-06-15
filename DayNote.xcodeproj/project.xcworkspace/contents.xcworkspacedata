@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:DayNote.xcodeproj">
+      location = "self:/Users/johnson/Downloads/FoodPin/DayNote.xcodeproj">
    </FileRef>
 </Workspace>
