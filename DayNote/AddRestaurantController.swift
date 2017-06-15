@@ -14,6 +14,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var locationTextField: UITextField!
+    @IBOutlet weak var noteBodyTextField: UITextView!
     
     // Core Data Exercise - Solution
     
@@ -62,7 +63,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
         if indexPath.row == 0 {
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 let imagePicker = UIImagePickerController()
-                imagePicker.allowsEditing = false
+                imagePicker.allowsEditing = true
                 imagePicker.sourceType = .photoLibrary
                 
                 imagePicker.delegate = self
@@ -99,7 +100,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     
     @IBAction func save(sender: AnyObject) {
         if nameTextField.text == "" || locationTextField.text == "" {
-            let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required.", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Oops!", message: "無法進行，你的某些欄位是空白的", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(alertAction)
             present(alertController, animated: true, completion: nil)
@@ -116,7 +117,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
             restaurant.title = nameTextField.text
             restaurant.name = nameTextField.text
             restaurant.location = locationTextField.text
-            
+            restaurant.noteContent = noteBodyTextField.text
             // Core Data Exercise - Solution
             if let restaurantImage = photoImageView.image {
                 if let imageData = UIImagePNGRepresentation(restaurantImage) {

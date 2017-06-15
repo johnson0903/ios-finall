@@ -87,7 +87,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     // MARK: - UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,14 +96,14 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // Configure the cell...
         switch indexPath.row {
         case 0:
-            cell.fieldLabel.text = "Name"
+            cell.fieldLabel.text = "標題"
             cell.valueLabel.text = restaurant.name
         case 1:
-            cell.fieldLabel.text = "Location"
+            cell.fieldLabel.text = "位置"
             cell.valueLabel.text = restaurant.location
         case 2:
-            cell.fieldLabel.text = "Been here"
-            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before. \(restaurant.rating ?? "")" : "No"
+            cell.fieldLabel.text = "內容"
+            cell.valueLabel.text = restaurant.noteContent
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
@@ -118,25 +118,6 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
     }
     
-    @IBAction func ratingButtonTapped(segue: UIStoryboardSegue) {
-        if let rating = segue.identifier {
-            
-            restaurant.isVisited = true
-            
-            switch rating {
-            case "great": restaurant.rating = "Absolutely love it! Must try."
-            case "good": restaurant.rating = "Pretty good."
-            case "dislike": restaurant.rating = "I don't like it."
-            default: break
-            }
-        }
-        
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-            appDelegate.saveContext()
-        }
-        
-        tableView.reloadData()
-    }
     
     // MARK: - Navigation
     
